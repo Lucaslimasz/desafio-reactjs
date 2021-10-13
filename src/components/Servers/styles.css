@@ -1,0 +1,36 @@
+.container-server {
+  width: 100%;
+  border: 0.5px solid #b7b7b7;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.container-server .header-server {
+  background: #f0f0f0;
+  padding: 12px 10px;
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+}
+
+.container-server .header-server h1 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.container-server table {
+  padding: 16px;
+  width: 100%;
+}
+
+.container-server table th,
+.container-server table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 11px;
+}
+
+.container-server table th {
+  background: #f0f0f0;
+}
