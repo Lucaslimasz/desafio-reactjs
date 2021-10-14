@@ -8,18 +8,19 @@ import {
 
 import api from "../services/api";
 
-const ServersContext = createContext({});
+import {IServersData, IServers} from '../@types/servers';
 
-export function ServerProvider({ children }) {
-  const [servers, setServers] = useState([]);
-  const [serversSelected, setServersSelected] = useState([]);
-  const [totalMemory, setTotalMemory] = useState(0);
-  const [totalCpu, setTotalCpu] = useState(0);
-  const [totalDisk, setTotalDisk] = useState(0);
+const ServersContext = createContext<IServersData>({} as IServersData);
 
+export function ServerProvider({ children }: any) {
+  const [servers, setServers] = useState<IServers[]>([]);
+  const [serversSelected, setServersSelected] = useState<number[]>([]);
+  const [totalMemory, setTotalMemory] = useState<number>(0);
+  const [totalCpu, setTotalCpu] = useState<number>(0);
+  const [totalDisk, setTotalDisk] = useState<number>(0);
 
   const handleServerSelection = useCallback(
-    (id) => {
+    (id: number) => {
       const verifySelectedId = serversSelected.includes(id);
       if (verifySelectedId) {
         setServersSelected((oldState) => oldState.filter((row) => row !== id));
