@@ -6,7 +6,7 @@
 
 # Desafio Reactjs 
 
-> Gerenciador de servidores | Desenvolvimento do *desafio reactjs*, Utilizando React.Js 
+> Gerenciador de servidores | Desenvolvimento do *desafio reactjs*
 
 ## 💻 Projeto
 
@@ -23,6 +23,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 ### 📄 O que foi usado:
 
 - ReactJS
+- Typescript
 - useState
 - useCallback
 - useEffect
