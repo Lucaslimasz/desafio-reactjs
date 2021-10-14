@@ -1,13 +1,17 @@
-import './styles.css';
+import { useServers } from "../../hooks/useServers";
+
+import "./styles.css";
 
 function Servers() {
+  const { handleServerSelection, servers } = useServers();
+
   return (
     <div className="container-server">
       <div className="header-server">
         <h1>Tabela de servidores</h1>
       </div>
       <div className="body-server">
-        <table cellspacing="0">
+        <table cellSpacing="0">
           <tr>
             <th>Select</th>
             <th>Hostname</th>
@@ -16,16 +20,21 @@ function Servers() {
             <th>Disco</th>
             <th>IP</th>
           </tr>
-          <tr>
-            <td>
-              <input type="checkbox" />
-            </td>
-            <td>Server 1</td>
-            <td>10 GB</td>
-            <td>4 vCPUs</td>
-            <td>200 GB</td>
-            <td>10.0.0.1</td>
-          </tr>
+          {servers.map((data) => (
+            <tr key={data.id_vm}>
+              <td>
+                <input
+                  type="checkbox"
+                  onChange={() => handleServerSelection(data.id_vm)}
+                />
+              </td>
+              <td>{data.hostname}</td>
+              <td>{data.configuracao.memoryProvisioned} GB</td>
+              <td>{data.configuracao.cpuProvisioned} vCPUs</td>
+              <td>{data.configuracao.totalDiskGB} GB</td>
+              <td>{data.ip}</td>
+            </tr>
+          ))}
         </table>
       </div>
     </div>

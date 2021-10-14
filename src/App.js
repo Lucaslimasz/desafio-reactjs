@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { ServerProvider } from "./hooks/useServers"
 import AppRoutes from "./routes"
 
 const App = () => {
   return (
+    <ServerProvider>
     <Router>
       <Switch>
 
@@ -21,6 +23,7 @@ const App = () => {
       })}
       </Switch>
     </Router>
+    </ServerProvider>
   )
 }
 

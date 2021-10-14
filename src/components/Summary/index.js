@@ -7,7 +7,7 @@ function Summary() {
         <h1>Sumário dos recursos dos servidores</h1>
       </div>
       <div className="body-summary">
-        <table cellspacing="0">
+        <table cellSpacing="0">
           <tr>
             <th>Servidores Selecionados</th>
             <td>4 servidores selecionados</td>
